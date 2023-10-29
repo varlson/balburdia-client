@@ -25,3 +25,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.currency {
+  height: 130px;
+  width: 130px;
+}
+
+.info {
+  max-height: 371px;
+  overflow: scroll;
+}
