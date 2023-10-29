@@ -26,7 +26,7 @@ export default function Home() {
         </div>
         <div className="info border p-2">
           {desp.map((item, index) => (
-            <div className="border p-2 flex flex-col gap-y-1 my-2">
+            <div key={index} className="border p-2 flex flex-col gap-y-1 my-2">
               <div className="text-white font-bold p-2 rounded bg-red-400 self-start">
                 {item.price}
               </div>
