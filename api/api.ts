@@ -106,7 +106,7 @@ export const getMonthStatus = async () => {
 export const getExpenses = async () => {
   return new Promise(async (resolve, reject) => {
     try {
-      const promResp = await fetch(dev + "/api/expenses", fetchOptions);
+      const promResp = await fetch(base + "/api/expenses", fetchOptions);
       const resp = await promResp.json();
       if (resp.status) {
         resolve(resp);
