@@ -98,7 +98,7 @@ export const getMonthStatus = async () => {
         reject(resp.error);
       }
     } catch (error) {
-      reject(error.message);
+      reject(error);
     }
   });
 };
