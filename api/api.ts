@@ -114,7 +114,7 @@ export const getExpenses = async () => {
         reject(resp.error);
       }
     } catch (error) {
-      reject(error.message);
+      reject(error);
     }
   });
 };
