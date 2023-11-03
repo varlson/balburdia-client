@@ -9,9 +9,11 @@ import { useEffect, useState } from "react";
 import { MonthStatusType } from "@/types/types";
 import { CirclesWithBar } from "react-loader-spinner";
 import Expenses from "@/components/Expenses";
+import ErrorPage from "@/components/ErrorPage";
 
 export default function Home() {
   const [month, setMonth] = useState<MonthStatusType | null>(null);
+  const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const getmonthStatus = async () => {
@@ -24,6 +26,7 @@ export default function Home() {
           setIsLoading(false);
         })
         .catch((error) => {
+          setError(true);
           console.log("error");
           console.log(error);
           setIsLoading(false);
@@ -49,6 +52,8 @@ export default function Home() {
         />
       </div>
     );
+
+  if (error) return <ErrorPage />;
 
   return (
     <main className="grid h-screen bg-blue-950 md:w-5/12 md:m-auto">

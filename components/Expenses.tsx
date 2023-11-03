@@ -3,18 +3,22 @@ import { desp, getExpenses } from "@/api/api";
 import { ExpenseType, ExpensesType } from "@/types/types";
 import React, { useEffect, useState } from "react";
 import { FallingLines } from "react-loader-spinner";
+import ErrorPage from "./ErrorPage";
 
 function Expenses() {
   const [expenses, setExpenses] = useState<ExpenseType | null>();
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+
   useEffect(() => {
     const getmonthExpenses = async () => {
       getExpenses()
-        .then((resp) => {
+        .then((resp: any) => {
           const expensesResp = resp.data as ExpensesType[];
-          const exp: ExpenseType = {};
-          exp.expenses = expensesResp;
-          exp.total = resp.total;
+          const exp: ExpenseType = {
+            expenses: expensesResp,
+            total: resp.total,
+          };
 
           console.log("expenses api");
           console.log(resp);
@@ -22,6 +26,7 @@ function Expenses() {
           setIsLoading(false);
         })
         .catch((error) => {
+          setError(true);
           console.log("error");
           console.log(error);
           setIsLoading(false);
@@ -37,10 +42,12 @@ function Expenses() {
           color="#4fa94d"
           width="100"
           visible={true}
-          ariaLabel="falling-lines-loading"
+          // ariaLabel="falling-lines-loading"
         />
       </div>
     );
+
+  if (error) return <ErrorPage />;
 
   return (
     <div>

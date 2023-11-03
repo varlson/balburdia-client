@@ -32,7 +32,7 @@ body {
 }
 
 .info {
-  max-height: 371px;
+  max-height: 350px;
   scrollbar-width: none;
   overflow: scroll;
 }
