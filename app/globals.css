@@ -33,5 +33,10 @@ body {
 
 .info {
   max-height: 371px;
+  scrollbar-width: none;
   overflow: scroll;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
 }
