@@ -5,7 +5,7 @@ import { ExpenseType, ExpensesType } from "@/types/types";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-function page() {
+function Page() {
   const [expenses, setExpenses] = useState<ExpenseType | null>();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -78,4 +78,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
