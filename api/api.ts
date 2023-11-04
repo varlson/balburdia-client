@@ -1,80 +1,3 @@
-export const desp = [
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-  {
-    purchase: "alguma coisa ",
-    price: "400 R$ ",
-    by: "fulano",
-    date: "11/11/11",
-  },
-];
-
 const fetchOptions = {
   method: "GET",
   Headers: {
@@ -115,6 +38,22 @@ export const getExpenses = async () => {
       }
     } catch (error) {
       reject(error);
+    }
+  });
+};
+
+export const getPayers = async () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const promResp = await fetch(base + "/api/payers", fetchOptions);
+      const resp = await promResp.json();
+      if (resp.status) {
+        resolve(resp.datas);
+      } else {
+        reject(resp.error);
+      }
+    } catch (error: any) {
+      reject(error.message);
     }
   });
 };

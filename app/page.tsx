@@ -1,16 +1,9 @@
 "use client";
-import Image from "next/image";
-import { ImHome } from "react-icons/im";
-import { MdOutlinePayment } from "react-icons/md";
-import { PiUsersFourFill } from "react-icons/pi";
-import { BsCartCheckFill } from "react-icons/bs";
-import { desp, getMonthStatus } from "@/api/api";
+import { getMonthStatus } from "@/api/api";
 import { useEffect, useState } from "react";
 import { MonthStatusType } from "@/types/types";
-import { CirclesWithBar } from "react-loader-spinner";
 import Expenses from "@/components/Expenses";
 import ErrorPage from "@/components/ErrorPage";
-import Link from "next/link";
 import Loader from "@/components/Loader";
 
 export default function Home() {

@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import { BsCartCheckFill } from "react-icons/bs";
 import { ImHome } from "react-icons/im";
-import { MdOutlinePayment } from "react-icons/md";
 import { PiUsersFourFill } from "react-icons/pi";
 
 function Footer() {
@@ -15,12 +14,16 @@ function Footer() {
           </Link>
         </div>
 
-        <div className="text-4xl">
+        {/* <div className="text-4xl">
+          <Link href="">
           <MdOutlinePayment />
-        </div>
+          </Link>
+        </div> */}
 
         <div className="text-4xl">
-          <PiUsersFourFill />
+          <Link href="/mes">
+            <PiUsersFourFill />
+          </Link>
         </div>
 
         <div className="text-4xl">

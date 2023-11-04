@@ -1,5 +1,5 @@
 "use client";
-import { desp, getExpenses } from "@/api/api";
+import { getExpenses } from "@/api/api";
 import { ExpenseType, ExpensesType } from "@/types/types";
 import React, { useEffect, useState } from "react";
 import { FallingLines } from "react-loader-spinner";
