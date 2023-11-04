@@ -4,6 +4,7 @@ import { ExpenseType, ExpensesType } from "@/types/types";
 import React, { useEffect, useState } from "react";
 import { FallingLines } from "react-loader-spinner";
 import ErrorPage from "./ErrorPage";
+import Link from "next/link";
 
 function Expenses() {
   const [expenses, setExpenses] = useState<ExpenseType | null>();
@@ -63,11 +64,15 @@ function Expenses() {
           <div className="text-white font-bold p-2 rounded bg-red-400 self-start">
             {item.value}
           </div>
-          <p className="text-center text-white">{item.desc}</p>
+          <p className="font-light text-sm my-1 text-white">{item.desc}</p>
           <div className="flex justify-between">
-            <button className="p-2  rounded m-rigth-auto bg-yellow-400">
+            <Link
+              target="blank"
+              href={item.link}
+              className="p-2  rounded m-rigth-auto bg-yellow-400"
+            >
               Ver comprovante
-            </button>
+            </Link>
             <p className="text-right font-light text-white">{`Por: ${item.author} - ${item.date}`}</p>
           </div>
         </div>
