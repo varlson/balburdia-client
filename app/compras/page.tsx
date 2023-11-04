@@ -46,6 +46,13 @@ function Page() {
       <p className="text-xl text-yellow-400 underline underline-offset-4">
         Compras:
       </p>
+
+      {expenses?.expenses.length == 0 && (
+        <div className="text-yellow-400 text-center my-4 text-2xl">
+          Sem despesas do mês ainda!
+        </div>
+      )}
+
       <div className="wrap">
         {expenses?.expenses.map((item, index) => (
           <div key={index} className="border-dashed border p-2 my-2 rounded">
