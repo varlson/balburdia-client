@@ -49,6 +49,13 @@ function Expenses() {
 
   if (error) return <ErrorPage />;
 
+  if (expenses?.expenses.length == 0)
+    return (
+      <div className="flex justify-center">
+        <p className="text-center text-2xl text-red-400">Sem despesas</p>
+      </div>
+    );
+
   return (
     <div>
       {expenses?.expenses.map((item, index) => (
