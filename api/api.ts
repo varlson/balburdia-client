@@ -61,7 +61,7 @@ export const getPayers = async () => {
 export const getFinier = async () => {
   return new Promise(async (resolve, reject) => {
     try {
-      const promResp = await fetch(dev + "/api/fines", fetchOptions);
+      const promResp = await fetch(base + "/api/fines", fetchOptions);
       const resp = await promResp.json();
       if (resp.status) {
         resolve(resp.data);
