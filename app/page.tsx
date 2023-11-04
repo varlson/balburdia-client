@@ -10,6 +10,7 @@ import { MonthStatusType } from "@/types/types";
 import { CirclesWithBar } from "react-loader-spinner";
 import Expenses from "@/components/Expenses";
 import ErrorPage from "@/components/ErrorPage";
+import Link from "next/link";
 
 export default function Home() {
   const [month, setMonth] = useState<MonthStatusType | null>(null);
@@ -56,8 +57,8 @@ export default function Home() {
   if (error) return <ErrorPage />;
 
   return (
-    <main className="grid h-screen bg-blue-950 md:w-5/12 md:m-auto">
-      <div className="   grid self-start">
+    <main className="">
+      <div className="grid self-start">
         <div className="bg-yellow-400 p-3 text-center rounded-b-3xl">
           <p className="text-3xl font-bold">Balburdia - Caixinha</p>
         </div>
@@ -77,25 +78,6 @@ export default function Home() {
         </div>
         <div className="info border p-2 scroll">
           <Expenses />
-        </div>
-      </div>
-      <div className="self-end p-2 footer bg-yellow-400 rounded-t-3xl">
-        <div className="text-black flex justify-around">
-          <div className="text-4xl">
-            <ImHome />
-          </div>
-
-          <div className="text-4xl">
-            <MdOutlinePayment />
-          </div>
-
-          <div className="text-4xl">
-            <PiUsersFourFill />
-          </div>
-
-          <div className="text-4xl">
-            <BsCartCheckFill />
-          </div>
         </div>
       </div>
     </main>

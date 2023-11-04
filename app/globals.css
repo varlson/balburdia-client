@@ -40,3 +40,13 @@ body {
 .scroll::-webkit-scrollbar {
   display: none;
 }
+
+.wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.wrap {
+  max-height: 80vh;
+  overflow: scroll;
+  scrollbar-width: none;
+}

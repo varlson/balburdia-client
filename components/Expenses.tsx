@@ -64,7 +64,9 @@ function Expenses() {
           <div className="text-white font-bold p-2 rounded bg-red-400 self-start">
             {item.value}
           </div>
-          <p className="font-light text-sm my-1 text-white">{item.desc}</p>
+          <p className="text-justify font-light text-sm my-1 text-white">
+            {item.desc}
+          </p>
           <div className="flex justify-between">
             <Link
               target="blank"
