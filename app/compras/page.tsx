@@ -1,5 +1,6 @@
 "use client";
 import { getExpenses } from "@/api/api";
+import Loader from "@/components/Loader";
 import { ExpenseType, ExpensesType } from "@/types/types";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -33,6 +34,13 @@ function page() {
     };
     getmonthExpenses();
   }, []);
+
+  if (isLoading)
+    return (
+      <div className="flex items-center justify-center h-">
+        <Loader />
+      </div>
+    );
   return (
     <div className="">
       <p className="text-xl text-yellow-400 underline underline-offset-4">
