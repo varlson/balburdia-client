@@ -22,8 +22,10 @@ export type ResidentType = {
   name: string;
   status: string;
 };
-// export type PeyerType = {
-//   residents:{
 
-//   }
-// }
+export type FineType = {
+  desc: string;
+  status: boolean;
+  value: string;
+  resident: string;
+};
