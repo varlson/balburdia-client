@@ -1,5 +1,5 @@
 "use client";
-import { getMonthStatus } from "@/api/api";
+import { getMonthStatus, wakeUp } from "@/api/api";
 import { useEffect, useState } from "react";
 import { MonthStatusType } from "@/types/types";
 import Expenses from "@/components/Expenses";
@@ -11,19 +11,30 @@ export default function Home() {
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    // setInterval(async () => {
+    //   wakeUp()
+    //     .then((resp) => {
+    //       console.log(resp + " Wake-up Operaton");
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //       console.log(" Wake-up Operaton failed");
+    //     });
+    // }, 60000);
+
     const getmonthStatus = async () => {
       getMonthStatus()
         .then((resp) => {
           const monthStatus = resp as MonthStatusType;
-          console.log("rep");
-          console.log(resp);
+          // console.log("rep");
+          // console.log(resp);
           setMonth(monthStatus);
           setIsLoading(false);
         })
         .catch((error) => {
           setError(true);
-          console.log("error");
-          console.log(error);
+          // console.lllog("error");
+          // console.log(error);
           setIsLoading(false);
         });
     };

@@ -16,20 +16,17 @@ function Expenses() {
       getExpenses()
         .then((resp: any) => {
           const expensesResp = resp.data as ExpensesType[];
+          const reversed = expensesResp.reverse() as ExpensesType[];
           const exp: ExpenseType = {
-            expenses: expensesResp,
+            expenses: reversed,
             total: resp.total,
           };
 
-          console.log("expenses api");
-          console.log(resp);
           setExpenses(exp);
           setIsLoading(false);
         })
         .catch((error) => {
           setError(true);
-          console.log("error");
-          console.log(error);
           setIsLoading(false);
         });
     };

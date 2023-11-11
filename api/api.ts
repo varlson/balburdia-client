@@ -73,3 +73,21 @@ export const getFinier = async () => {
     }
   });
 };
+
+export const wakeUp = async () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const promResp = await fetch(base, fetchOptions);
+      const resp = await promResp.json();
+      console.log("resp");
+      console.log(resp);
+      if (resp.status) {
+        resolve(resp.data);
+      } else {
+        reject(resp.error);
+      }
+    } catch (error: any) {
+      reject(error.message);
+    }
+  });
+};
