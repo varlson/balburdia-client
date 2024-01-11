@@ -40,7 +40,7 @@ function Page() {
   return (
     <div>
       <p className="text-xl text-yellow-400 underline underline-offset-4">
-        Mês de Novembro:
+        Mês de Janeiro:
       </p>
 
       <div className="my-2 p-2 text-yellow-400  divide-y">
