@@ -1,0 +1,1 @@
+This project is for "republica balburdia", to help the residents following all information about purchases 
