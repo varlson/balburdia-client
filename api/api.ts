@@ -5,8 +5,8 @@ const fetchOptions = {
   },
 };
 
-// const base = "https://balburdia-api.onrender.com";
-const base = "http://localhost:4001";
+const base = "https://balburdia-api.onrender.com";
+// const base = "http://localhost:4001";
 const dev = "http://localhost:4001";
 
 export const getMonthStatus = async () => {
