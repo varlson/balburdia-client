@@ -50,3 +50,8 @@ body {
   overflow: scroll;
   scrollbar-width: none;
 }
+
+.month-area {
+  max-height: 80%;
+  /* overflow-y: hidden; */
+}

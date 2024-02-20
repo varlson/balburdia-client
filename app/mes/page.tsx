@@ -43,7 +43,7 @@ function Page() {
         Mês de Janeiro:
       </p>
 
-      <div className="my-2 p-2 text-yellow-400  divide-y">
+      <div className="my-2 p-2 text-yellow-400  divide-y month-area">
         {payers.map((item, index) => (
           <div className="p-2 grid grid-col-2 gap-x-4 " key={index}>
             <p>{item.name}</p>
